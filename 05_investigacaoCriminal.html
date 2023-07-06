@@ -11,10 +11,44 @@
     */
 
     //ENTRADA
-
-    
+    const telefonou = prompt(`Você telefonou para a vítima?`).toLowerCase().trim();
+    const local = prompt(`Você esteve no local?`).toLowerCase().trim();
+    const mora = prompt(`Você mora perto da vítima?`).toLowerCase().trim();
+    const devia = prompt(`Você devia para a vítima?`).toLowerCase().trim();
+    const trabalhou = prompt(`Você já trabalhou com a vítima?`).toLowerCase().trim();
     //PROCESSAMENTO
-
+    let pontos = 0;
+    switch (telefonou) {
+        case "sim":
+            pontos++;
+            alert(` n sei`);
+            break;
+            switch (local) {
+                case "sim":
+                    pontos++;
+                    break
+            }
+            switch (mora) {
+                case "sim":
+                    pontos++;
+                    break;
+            }
+            switch (devia) {
+                case "sim":
+                    pontos++;
+                    break;
+            }
+            switch (trabalhou) {
+                case "sim":
+                    pontos++;
+                    break;
+            }
+            alert(`cansei`);
+    }
+    switch (pontos <= 1){
+        case 0:
+    alert(`Você é inocente!`);
+}
 
     //SAÍDA
 

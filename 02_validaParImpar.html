@@ -5,9 +5,18 @@
     */
 
     //ENTRADA
-
-    
+    const numero = Number(prompt(`Insira um número inteiro`).trim());
     //PROCESSAMENTO
+    switch (numero % 2) {
+        case 0:
+            alert(`O número ${numero} é par1`);
+            break;
+            case 1:
+                alert(`O número ${numero} é ímpar`);
+        default:
+            alert(`Valor inválido!`);
+            break;
+    }
 
     
     //SAÍDA
