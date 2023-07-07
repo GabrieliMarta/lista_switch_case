@@ -18,38 +18,50 @@
     const trabalhou = prompt(`Você já trabalhou com a vítima?`).toLowerCase().trim();
     //PROCESSAMENTO
     let pontos = 0;
+    let mensagemFinal = `O resultado da investigação afirmou que você é `;
+
     switch (telefonou) {
         case "sim":
-            pontos++;
-            alert(` n sei`);
+            pontos += 1
             break;
-            switch (local) {
-                case "sim":
-                    pontos++;
-                    break
-            }
-            switch (mora) {
-                case "sim":
-                    pontos++;
-                    break;
-            }
-            switch (devia) {
-                case "sim":
-                    pontos++;
-                    break;
-            }
-            switch (trabalhou) {
-                case "sim":
-                    pontos++;
-                    break;
-            }
-            alert(`cansei`);
     }
-    switch (pontos <= 1){
-        case 0:
-    alert(`Você é inocente!`);
-}
+    switch (local) {
+        case "sim":
+            pontos += 1
+            break
+    }
+    switch (mora) {
+        case "sim":
+            pontos += 1 
+            break;
+    }
+    switch (devia) {
+        case "sim":
+            pontos += 1
+            break;
+    }
+    switch (trabalhou) {
+        case "sim":
+            pontos += 1
+            break;
+    }
 
     //SAÍDA
+    switch (pontos) {
+        case 2:
+            mensagemFinal += `Suspeito!`
+            break;
+        case 3:
+        case 4:
+            mensagemFinal += `Cumplice!`
+            break;
+        case 5:
+        mensagemFinal += `Assasino!`
+            break;
+        default:
+        mensagemFinal += `Inocente!`
+    }
+
+    alert(mensagemFinal);
 
 </script>

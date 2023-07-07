@@ -7,25 +7,52 @@
     - inteiro ou decimal.
     */
     //ENTRADA
-    const num1 = Number(prompt(`Insira um número:`).trim().replace(",","."));
-    const num2 = Number(prompt(`Insira outro número:`).trim().replace(",","."));
+    const num1 = Number(prompt(`Insira um número:`).trim().replace(",", "."));
+    const num2 = Number(prompt(`Insira outro número:`).trim().replace(",", "."));
     const operação = prompt(`Qual operação deseja realizar? \n "+"para adição, "-" para subtração, "*" para multiplicação e "/" para divisão.`);
     //PROCESSAMENTO
-    switch (num1 + num2) {
-        case par  :
-            alert(`esse número é par `);
+    let operaçãoFinal = 0;
+    switch (operação) {
+        case "+":
+            operaçãoFinal = num1 + num2
             break;
-            switch (num1 + num2){
-                case 
-            }
-    
-       
+        case "-":
+            operaçãoFinal = num1 - num2
+            break;
+        case "*":
+            operaçãoFinal = num1 * num2
+            break;
+        case "/":
+            operaçãoFinal = num1 / num2
             break;
     }
-   
-
-      
-    
+    switch (operaçãoFinal < 0) {
+        case true:
+            operaçãoFinal += `, ele é negativo`
+            break;
+        default:
+            operaçãoFinal += `, ele é positivo`
+            break;
+    }
+    switch (operaçãoFinal % 2) {
+        case 0:
+            operaçãoFinal += `, é par`
+            break;
+        default:
+            operaçãoFinal += `, é ímpar`
+            break;
+    }
+    switch (Number.isInteger(operaçãoFinal)) {
+        case true:
+            operaçãoFinal += ` e inteiro`
+            break;
+        default:
+        operaçãoFinal += ` e decimal`
+            break;
+    }
     //SAÍDA
+    let mensagemFinal = `O resultado da operação será ${operaçãoFinal}.`;
+    alert(mensagemFinal);
+
 
 </script>
